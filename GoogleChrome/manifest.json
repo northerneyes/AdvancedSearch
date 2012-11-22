@@ -5,9 +5,6 @@
 	"description": "This is extension that lets can easily use many feature of google search.",
 	"browser_action": {
 		"default_icon": "icons/icon.png",
-		"default_popup": "button/popup.html"
-	},
-	"permissions": [
-	 "http://api.flickr.com/"
-	]
+		"default_popup": "popup.html"
+	}
 }

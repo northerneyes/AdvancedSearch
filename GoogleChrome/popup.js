@@ -3,11 +3,24 @@ $(function(){
 	$('#query').keyup(function(e)
 	{
 		if (e.keyCode == 13) {
-			console.log("You enter: " + $(this).val());
+			query = $(this).val();
+			console.log("You enter: " + query);
+
+			    tab = chrome.tabs.getSelected(null, function(tab){
+			    	searchOnSite(tab.url, query);
+				//searchOnSite(currentTab.url, query);
+			})
+			
 		};
 	});
 
 });
+
+function searchOnSite(url, query)
+{
+	chrome.tabs.create({url: getSearchGoogleQueryForSite(query,url)});
+}
+
 // var req = new XMLHttpRequest();
 // req.open(
 // 	"GET",

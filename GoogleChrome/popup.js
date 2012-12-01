@@ -1,3 +1,12 @@
+SearchTabId = undefined;
+CurrentTabId = undefined;
+
+
+chrome.tabs.onRemoved.addListener(function(SearchTabId, removeInfo) {
+	console.log("CurrentTabId tab:" + CurrentTabId);
+	chrome.tabs.update(CurrentTabId, {selected: true});
+});
+
 $(function(){
 
 	$('#query').keyup(function(e)
@@ -5,10 +14,10 @@ $(function(){
 		if (e.keyCode == 13) {
 			query = $(this).val();
 			console.log("You enter: " + query);
-
-			    tab = chrome.tabs.getSelected(null, function(tab){
-			    	searchOnSite(tab.url, query);
-				//searchOnSite(currentTab.url, query);
+			
+			  chrome.tabs.getSelected(null, function(tab){
+			  	CurrentTabId = tab.id;
+			    searchOnSite(tab.url, query);
 			})
 			
 		};
@@ -18,7 +27,12 @@ $(function(){
 
 function searchOnSite(url, query)
 {
-	chrome.tabs.create({url: getSearchGoogleQueryForSite(query,url)});
+	chrome.tabs.create({url: getSearchGoogleQueryForSite(query,url)}, function(tab){
+		chrome.tabs.executeScript(tab.id, {file:"search.js"});
+		SearchTabId = tab.id;
+	});
+		
+
 }
 
 // var req = new XMLHttpRequest();

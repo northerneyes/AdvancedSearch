@@ -7,7 +7,9 @@
 		"default_icon": "icons/icon.png",
 		"default_popup": "popup.html"
 	},
+	"background": { "scripts": ["search.js"] },
 	"permissions": [
-    	"tabs"
+    	"tabs",
+    	"http://*/*"
   	]
 }

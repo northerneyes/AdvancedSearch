@@ -16,13 +16,12 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 		case 1:
 			SearchTabId = request.currentTabId;
 			console.log("SearchTabId is " + SearchTabId);
-		   // SearchOnGoogle();   //site is not exist!
+		    SearchOnGoogle();   //site is not exist!
   			console.log("Run script SearchOnGoogle!");
  			break;
 	}
 });
 
 function SearchOnGoogle () {
-	console.log("Search Click!");
-	document.getElementById('gbqfba').click();
+	 chrome.tabs.executeScript(SearchTabId, {code:"document.getElementById('gbqfba').click()"});
 }

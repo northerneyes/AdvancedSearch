@@ -1,5 +1,5 @@
 {
-	"name": "Advanced Search",
+	"name": "AutoSearch",
 	"version": "1.0",
 	"manifest_version": 2,
 	"description": "This is extension that lets can easily use many feature of google search.",
@@ -7,7 +7,7 @@
 		"default_icon": "icons/icon.png",
 		"default_popup": "popup.html"
 	},
-	"background": { "scripts": ["search.js"] },
+	"background": { "scripts": ["background.js"] },
 	"permissions": [
     	"tabs",
     	"http://*/*"

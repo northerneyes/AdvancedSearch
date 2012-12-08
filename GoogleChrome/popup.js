@@ -1,5 +1,5 @@
-SearchTabId = undefined;
-CurrentTabId = undefined;
+var SearchTabId = undefined;
+var CurrentTabId = undefined;
 
 
 chrome.tabs.onRemoved.addListener(function(SearchTabId, removeInfo) {
@@ -17,6 +17,7 @@ $(function(){
 			
 			  chrome.tabs.getSelected(null, function(tab){
 			  	CurrentTabId = tab.id;
+			  	chrome.extension.sendMessage({messageId: 0, currentTabId: tab.id}); //send request to background.js
 			    searchOnSite(tab.url, query);
 			})
 			
@@ -28,11 +29,10 @@ $(function(){
 function searchOnSite(url, query)
 {
 	chrome.tabs.create({url: getSearchGoogleQueryForSite(query,url)}, function(tab){
-		chrome.tabs.executeScript(tab.id, {file:"search.js"});
-		SearchTabId = tab.id;
+		chrome.extension.sendMessage({messageId: 1, currentTabId: tab.id}); //send request to background.js
+		//chrome.tabs.executeScript(tab.id, {file:"search.js"});
+		//SearchTabId = tab.id;
 	});
-		
-
 }
 
 // var req = new XMLHttpRequest();

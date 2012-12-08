@@ -2,7 +2,7 @@ body {
   font-family: sans-serif;
   min-width:250px;
   overflow-x:hidden;
-  background: #e3e3e3;
+  background: #ffffff;
 }
 
 div.form{
@@ -11,8 +11,9 @@ div.form{
 
 #query{
   width: 250px;
-  border-style: hidden;
-  border-radius:2px;
+  border: 1px solid #BFBFBF
+  border-radius: 2px;
+  color: #444;
 }
 
 h1{

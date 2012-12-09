@@ -1,10 +1,20 @@
 var SearchTabId = undefined;
 var CurrentTabId = undefined;
 
-chrome.tabs.onRemoved.addListener(function(SearchTabId, removeInfo) {
+chrome.tabs.onRemoved.addListener(function(id, removeInfo) {
+	if(id === SearchTabId)
+	{
+		backToCurrentTab();
+	}
+});
+
+function backToCurrentTab()
+{
 	console.log("CurrentTabId tab:" + CurrentTabId);
 	chrome.tabs.update(CurrentTabId, {selected: true});
-});
+	SearchTabId = undefined;
+	CurrentTabId = undefined;
+}
 
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 	switch(request.messageId)
@@ -23,5 +33,5 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 });
 
 function SearchOnGoogle () {
-	 chrome.tabs.executeScript(SearchTabId, {code:"document.getElementById('gbqfba').click()"});
+	 chrome.tabs.executeScript(SearchTabId, {code:"document.getElementById('gbqfba').click()"}); //see how work youtubestopper
 }

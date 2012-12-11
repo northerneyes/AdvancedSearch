@@ -7,7 +7,7 @@
 		"default_icon": "icons/icon.png",
 		"default_popup": "popup.html"
 	},
-	"background": { "scripts": ["background.js"] },
+	"background": { "scripts": ["functions.js", "background.js"] },
 	"permissions": [
     	"tabs",
     	"http://*/*"

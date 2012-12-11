@@ -21,7 +21,22 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 	{
 		case 0:
  			CurrentTabId = request.currentTabId;
+ 			
+ 			var url = request.url;
+ 			var query = request.query;
+ 			var filetype = request.filetype;
+ 			var queryOptions = request.queryOptions;
+
+
+ 			var searchQuery = getSearchQuery(url, query, filetype, queryOptions);
+
 			console.log("CurrentTabId is " + CurrentTabId);
+			console.log("url is " + url);
+			console.log(searchQuery);
+			chrome.tabs.create({url: searchQuery}, function(tab){
+				SearchTabId = tab.id;
+				SearchOnGoogle();	//search!
+			});
  			break;
 		case 1:
 			SearchTabId = request.currentTabId;

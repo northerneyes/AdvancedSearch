@@ -8,8 +8,28 @@
 
 <body>
   <div class="form">
-    <h1>Введите запрос: </h1>
-    <input type="text" id="query">
+    <input id="query" type="search" incremental placeholder="Search on this site" aria-label="Поиск">
+
+    <div id = "search_on_site">
+    	<label>
+    		<input id = "toogle-search-on_site" type="checkbox">
+    		<span>Поиск по данному сайту</span>
+    	</label>
+	</div>
+
+	 <div id = "exatly_phrase">
+    	<label>
+    		<input id = "toggle_search_exatly_phrase" type="checkbox">
+    		<span>Поиск по точной фразе</span>
+    	</label>
+	</div>
+
+	<div id = "file-search">
+    	<label>
+    		<input id = "toggle_file_search" type="checkbox">
+    		<span>Поиск файлов</span>
+    	</label>
+	</div>
   </div>
 
 <script src="jquery/jquery-1.7.1.min.js"></script>

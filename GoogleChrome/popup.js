@@ -15,10 +15,26 @@ $(function(){
 			query = $(this).val();
 			console.log("You enter: " + query);
 			
-			  chrome.tabs.getSelected(null, function(tab){
+			var onSiteSearch = true;
+			var fileSearch = true;
+			var exactlyPhrase = true;
+			var filetype = "pdf";
+
+			chrome.tabs.getSelected(null, function(tab){
 			  	CurrentTabId = tab.id;
-			  	chrome.extension.sendMessage({messageId: 0, currentTabId: tab.id}); //send request to background.js
-			    searchOnSite(tab.url, query);
+			  	chrome.extension.sendMessage(
+			  	{
+			  		messageId: 0, 
+			  		currentTabId: tab.id,
+			  		url: tab.url,
+			  		query: query,
+			  		filetype: filetype,
+			  		queryOptions: {
+			  			onSiteSearch: onSiteSearch,
+			  			fileSearch: fileSearch,
+			  			exactlyPhrase: exactlyPhrase}
+			  	}); //send request to background.js
+			    //searchOnSite(tab.url, query);
 			})
 			
 		};
@@ -26,14 +42,14 @@ $(function(){
 
 });
 
-function searchOnSite(url, query)
-{
-	chrome.tabs.create({url: getSearchGoogleQueryForSite(query,url)}, function(tab){
-		chrome.extension.sendMessage({messageId: 1, currentTabId: tab.id}); //send request to background.js
-		//chrome.tabs.executeScript(tab.id, {file:"search.js"});
-		//SearchTabId = tab.id;
-	});
-}
+// function searchOnSite(url, query)
+// {
+// 	chrome.tabs.create({url: getSearchGoogleQueryForSite(query,url)}, function(tab){
+// 		chrome.extension.sendMessage({messageId: 1, currentTabId: tab.id}); //send request to background.js
+// 		//chrome.tabs.executeScript(tab.id, {file:"search.js"});
+// 		//SearchTabId = tab.id;
+// 	});
+// }
 
 // var req = new XMLHttpRequest();
 // req.open(

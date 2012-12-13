@@ -12,25 +12,29 @@
 
     <div id = "search_on_site">
     	<label>
-    		<input id = "toogle-search-on_site" type="checkbox">
-    		<span>Поиск по данному сайту</span>
+            <span>Поиск по данному сайту</span>
+    		<input id = "toogle-search-on_site" type="checkbox" class = "toggle" checked>
     	</label>
 	</div>
-
+   <!--  <h1 style=" font-size: 0.8em; line-height: 1.2em;">Дополнительные настройки</h1> -->
+  <div class = "splitter"> <hr /> </div>
 	 <div id = "exatly_phrase">
     	<label>
-    		<input id = "toggle_search_exatly_phrase" type="checkbox">
-    		<span>Поиск по точной фразе</span>
+            <span>Поиск по точной фразе</span>
+    		<input id = "toggle_search_exatly_phrase" type="checkbox" class = "toggle">
     	</label>
 	</div>
 
 	<div id = "file-search">
     	<label>
-    		<input id = "toggle_file_search" type="checkbox">
-    		<span>Поиск файлов</span>
+            <span>Поиск файлов</span>
+    		<input id = "toggle_file_search" type="checkbox"  class = "toggle">
     	</label>
+        <input id = "txt_filetype" style="margin: 5px 0px 0px 0px" type="search">
 	</div>
   </div>
+
+<div class = "splitter"> <hr /> </div>
 
 <script src="jquery/jquery-1.7.1.min.js"></script>
 <script src="functions.js"></script>

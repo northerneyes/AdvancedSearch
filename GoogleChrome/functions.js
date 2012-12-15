@@ -2,9 +2,17 @@
 var googleSiteSearchKeyword = " site:";
 var googleFiletypeKeyword = " filetype:";
 var googleUrl = "http://www.google.com";
+var googleRelatedSite = "related:";
 
 function getSearchGoogleQuery(query){
-	return googleUrl + "\\?q=" + query;
+	return googleUrl + "\\search?q=" + query;
+}
+
+function getRelatedSearchQuery(url)
+{
+	var domainSite = getDomainName(url);
+	var resultQuery = googleRelatedSite + domainSite;
+	return getSearchGoogleQuery(resultQuery);
 }
 
 function getSearchQuery(url, query, filetype, queryOptions)
@@ -18,12 +26,16 @@ function getSearchQuery(url, query, filetype, queryOptions)
 	return getSearchGoogleQuery(resultQuery);
 }
 
+function getDomainName (url) {
+	var result = url.split("/");
+	var domainSite = result[0] + "//" + result[2];
+	return domainSite;
+}
 function getSiteOperator(needSiteSearch, url)
 {
 	if(needSiteSearch)
 	{
-		var result = url.split("/");
-		var domainSite = result[0] + "//" + result[2];
+		var domainSite = getDomainName(url);
 		return googleSiteSearchKeyword + domainSite;
 	}
 	return "";

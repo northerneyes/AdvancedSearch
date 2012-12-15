@@ -35,14 +35,16 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 			console.log(searchQuery);
 			chrome.tabs.create({url: searchQuery}, function(tab){
 				SearchTabId = tab.id;
-				SearchOnGoogle();	//search!
+				//SearchOnGoogle();	//search!
 			});
  			break;
 		case 1:
-			SearchTabId = request.currentTabId;
-			console.log("SearchTabId is " + SearchTabId);
-		    SearchOnGoogle();   //site is not exist!
-  			console.log("Run script SearchOnGoogle!");
+			CurrentTabId = request.currentTabId;
+			var url = request.url;
+			var searchQuery = getRelatedSearchQuery(url);
+			chrome.tabs.create({url: searchQuery}, function(tab){
+				SearchTabId = tab.id;
+			});
  			break;
 	}
 });

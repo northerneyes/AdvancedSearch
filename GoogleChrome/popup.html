@@ -1,41 +1,46 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset=utf-8 />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"  />
 	<title>Advanced Search</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="style.css" rel="stylesheet">
 </head>
 
 <body>
-  <div class="form">
+  <div id = "search">
     <input id="query" type="search" incremental placeholder="Search on this site" aria-label="Поиск">
-
-    <div id = "search_on_site">
-    	<label>
-            <span>Поиск по данному сайту</span>
-    		<input id = "toogle-search-on_site" type="checkbox" class = "toggle" checked>
-    	</label>
-	</div>
-   <!--  <h1 style=" font-size: 0.8em; line-height: 1.2em;">Дополнительные настройки</h1> -->
-  <div class = "splitter"> <hr /> </div>
-	 <div id = "exatly_phrase">
-    	<label>
-            <span>Поиск по точной фразе</span>
-    		<input id = "toggle_search_exatly_phrase" type="checkbox" class = "toggle">
-    	</label>
-	</div>
-
-	<div id = "file-search">
-    	<label>
-            <span>Поиск файлов</span>
-    		<input id = "toggle_file_search" type="checkbox"  class = "toggle">
-    	</label>
-        <input id = "txt_filetype" style="margin: 5px 0px 0px 0px" type="search">
-	</div>
   </div>
 
-<div class = "splitter"> <hr /> </div>
+  <div id = "settings">
+    <div id = "search_on_site" class="checkbox">
+        <label>
+          <input id = "toogle-search-on_site" type="checkbox" checked>
+          <span>Поиск по данному сайту</span>
+        </label>      
+    </div>
+    
+    <div id = "exatly_phrase" class = "checkbox">
+        <label>
+          <input id = "toggle_search_exatly_phrase" type="checkbox">
+          <span>Точная фраза</span>
+        </label>
+    </div>
+   
+    <div id = "file-search" >
+    	<div id = "file-search-checkbox" class="checkbox">
+        	<label>
+        		<input id = "toggle_file_search" type="checkbox">
+            <span>Поиск файлов</span>
+        	</label>
+           <input id = "txt_filetype" style="margin: 5px 0px 0px 0px" type="text" hidden = "true"> 
+      </div>
+    </div>
 
+  </div>
+<div class = "splitter"> <hr /> </div>
+  <div id = "related-search">
+      <button id = "btn-related-search" type="button" class="long" >Найти похожий сайт</button>
+  </div>
 <script src="jquery/jquery-1.7.1.min.js"></script>
 <script src="functions.js"></script>
 <script src="popup.js"></script>

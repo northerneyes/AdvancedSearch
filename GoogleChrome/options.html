@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html>
 <meta charset=utf-8 />
-<head><title>Options</title></head>
-<body onload="restore_options()">
-<form action="" onsubmit="save_options();return false;">
-  
+<head>
+  <title>AutoSearch Settings</title>
+  <link href="style.css" rel="stylesheet">
+ <!--  <link href="щ.css" rel="stylesheet"> -->
+</head>
+<body class="settings-body" onload="restore_options()">
+  <h1 class="icon">AutoSearch Settings</h1>
+  <hr />
+<!-- <form action="" onsubmit="save_options();return false;">
+
 <span id="locale_refresh">Time refresh</span>: <input name="refresh" id="refresh" size="1" /> <span id="locale_minutes">in minutes</span> <br />
 <span id="locale_language">Language</span>:
   <select name="lang" id="lang">
@@ -13,8 +19,8 @@
   </select>
 <br />
 <input type="submit" value="Save" id="locale_save"/>
-</form>
-<div id="status"></div>
+</form> -->
+<!-- <div id="status"></div> -->
 <script src="options.js"></script>
 </body>
 </html>

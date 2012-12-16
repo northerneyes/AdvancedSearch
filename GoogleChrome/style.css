@@ -10,7 +10,7 @@ hr {
  }
 
 body{
-    width: 250px;
+    /*width: 350px;*/
 }
 
 h1, input, button, textarea, p, a, ul, li, span {
@@ -275,4 +275,17 @@ input[type="search"] {
 
 #query{
     width: 250px;
+}
+
+/*Settings*/
+.icon{
+    background: url('../icons/icon32.png') no-repeat;
+    background-position-y: 0px;
+    padding-left: 45px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    font-size: 14pt;
+}
+.settings-body{
+    width: 350px;
 }

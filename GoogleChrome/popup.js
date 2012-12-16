@@ -3,7 +3,20 @@ $(function(){
 	$('#query').keyup(function(e)
 	{
 		if (e.keyCode == 13) {
-			query = $(this).val();
+			search();
+		};
+	});
+
+	$('#txt_filetype').keyup(function(e)
+	{
+		if (e.keyCode == 13) {
+			search();
+		};
+	});
+
+	function search()
+	{
+			query = $('#query').val();
 			console.log("You enter: " + query);
 
 			var onSiteSearch = $('#toogle-search-on_site').is(':checked');
@@ -25,9 +38,7 @@ $(function(){
 			  			exactlyPhrase: exactlyPhrase}
 			  	}); //send request to background.js
 			})
-			
-		};
-	});
+	}
 
 	$('#btn-related-search').click(function(){
 		chrome.tabs.getSelected(null, function(tab){
@@ -41,7 +52,9 @@ $(function(){
 	});
 
 	$('#toggle_file_search').click(function () {
-    	$('#txt_filetype').toggle('fast');
+    	$('#txt_filetype').toggle('fast',function(){
+    		$('#txt_filetype').focus();
+    	});
     });
 
 });

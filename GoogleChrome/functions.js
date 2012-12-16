@@ -1,4 +1,3 @@
-
 var googleSiteSearchKeyword = " site:";
 var googleFiletypeKeyword = " filetype:";
 var googleUrl = "http://www.google.com";

@@ -7,8 +7,41 @@
  <!--  <link href="щ.css" rel="stylesheet"> -->
 </head>
 <body class="settings-body" onload="restore_options()">
-  <h1 class="icon">AutoSearch Settings</h1>
-  <hr />
+	<h1 class="icon">AutoSearch Settings</h1>
+  	<hr />
+  	<div class="settings">
+  		<h3 class="title_section">Search</h3>
+	  	<div class="setting_section">
+	  		<div class="checkbox">
+		        <label>
+		          <input id = "toogle_search_on_site" type="checkbox" checked>
+		          <span>Поиск по сайту по умлочанию</span>
+		        </label>      
+	    	</div>	
+	  	</div>
+
+	  	<h3 class="title_section">Appearance</h3>
+	  	<div class="setting_section">
+	  		<div class="checkbox">
+		        <label>
+		          <input id = "toogle_show_exactly_phrase" type="checkbox" checked>
+		          <span>Показывать опцию "точная фраза"</span>
+		        </label>      
+	    	</div>	
+	    	<div class="checkbox">
+		        <label>
+		          <input id = "toogle_show_filesearch" type="checkbox" checked>
+		          <span>Показывать файловый поиск</span>
+		        </label>      
+	    	</div>	
+	    	<div class="checkbox">
+		        <label>
+		          <input id = "toogle_show_relatedsearch" type="checkbox" checked>
+		          <span>Показывать кнопку нахождения точного сайта</span>
+		        </label>      
+	    	</div>	
+	  	</div>
+  </div>
 <!-- <form action="" onsubmit="save_options();return false;">
 
 <span id="locale_refresh">Time refresh</span>: <input name="refresh" id="refresh" size="1" /> <span id="locale_minutes">in minutes</span> <br />
@@ -21,6 +54,7 @@
 <input type="submit" value="Save" id="locale_save"/>
 </form> -->
 <!-- <div id="status"></div> -->
+<script src="jquery/jquery-1.7.1.min.js"></script>
 <script src="options.js"></script>
 </body>
 </html>

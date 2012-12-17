@@ -1,4 +1,8 @@
+$(function(){
 
+  $('.checkbox').addClass('intend');
+
+});
 //Сохраняем опции
 function save_options()
 {

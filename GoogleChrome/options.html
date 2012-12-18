@@ -6,7 +6,7 @@
   <link href="style.css" rel="stylesheet">
  <!--  <link href="щ.css" rel="stylesheet"> -->
 </head>
-<body class="settings-body" onload="restore_options()">
+<body class="settings-body">
 	<h1 class="icon">AutoSearch Settings</h1>
   	<hr />
   	<div class="settings">
@@ -14,7 +14,7 @@
 	  	<div class="setting_section">
 	  		<div class="checkbox">
 		        <label>
-		          <input id = "toogle_search_on_site" type="checkbox" checked>
+		          <input id = "toogle_search_on_site" type="checkbox">
 		          <span>Поиск по сайту по умлочанию</span>
 		        </label>      
 	    	</div>	
@@ -24,37 +24,31 @@
 	  	<div class="setting_section">
 	  		<div class="checkbox">
 		        <label>
-		          <input id = "toogle_show_exactly_phrase" type="checkbox" checked>
+		          <input id = "toogle_show_exactly_phrase" type="checkbox">
 		          <span>Показывать опцию "точная фраза"</span>
 		        </label>      
 	    	</div>	
 	    	<div class="checkbox">
 		        <label>
-		          <input id = "toogle_show_filesearch" type="checkbox" checked>
+		          <input id = "toogle_show_filesearch" type="checkbox">
 		          <span>Показывать файловый поиск</span>
 		        </label>      
 	    	</div>	
 	    	<div class="checkbox">
 		        <label>
-		          <input id = "toogle_show_relatedsearch" type="checkbox" checked>
+		          <input id = "toogle_show_relatedsearch" type="checkbox">
 		          <span>Показывать кнопку нахождения точного сайта</span>
 		        </label>      
 	    	</div>	
 	  	</div>
   </div>
-<!-- <form action="" onsubmit="save_options();return false;">
 
-<span id="locale_refresh">Time refresh</span>: <input name="refresh" id="refresh" size="1" /> <span id="locale_minutes">in minutes</span> <br />
-<span id="locale_language">Language</span>:
-  <select name="lang" id="lang">
-    <option value="ru">Русский</option>
-    <option value="en">English</option>
-  </select>
-<br />
-<input type="submit" value="Save" id="locale_save"/>
-</form> -->
-<!-- <div id="status"></div> -->
+  <br>
+<div id="status"></div>
+<button id="save">Save</button>
+
 <script src="jquery/jquery-1.7.1.min.js"></script>
+<script src="utils.js"></script>
 <script src="options.js"></script>
 </body>
 </html>

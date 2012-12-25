@@ -1,3 +1,23 @@
 {
-	
+	"query_placeholder_site" : {
+		"message" : "Поиск по сайту"
+	},
+	"query_placeholder" : {
+		"message" : "Поиск в Google"
+	},
+	"popup_search_on_site" : {
+		"message" : "Поиск по сайту"
+	},
+	"popup_exactly_phrase" : {
+		"message" : "Точная фраза"
+	},
+	"popup_search_files" : {
+		"message" : "Поиск файлов"
+	},
+	"popup_related_site" : {
+		"message" : "Найти похожий сайт"
+	},
+	"language" : {
+		"message" : "Язык"
+	}
 }

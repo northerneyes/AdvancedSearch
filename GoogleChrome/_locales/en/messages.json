@@ -1,3 +1,23 @@
 {
-	
+	"query_placeholder_site" : {
+		"message" : "Search on this site"
+	},
+	"query_placeholder" : {
+		"message" : "Search on Google"
+	},
+	"popup_search_on_site" : {
+		"message" : "Search on this site"
+	},
+	"popup_exactly_phrase" : {
+		"message" : "Exactly phrase"
+	},
+	"popup_search_files" : {
+		"message" : "Search files"
+	},
+	"popup_related_site" : {
+		"message" : "Search related site"
+	},
+	"language" : {
+		"message" : "Language"
+	}
 }

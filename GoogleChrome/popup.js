@@ -1,5 +1,21 @@
 $(function(){
+
+	//Restore options
+	function restore_options()
+    {
+    	console.log("Options restored");
+    	
+    	ApplyPlaceholder();
+    	$('#search_on_site').find('span').html(chrome.i18n.getMessage("popup_search_on_site"));
+    	$('#exatly_phrase').find('span').html(chrome.i18n.getMessage("popup_exactly_phrase"));
+    	$('#file-search').find('span').html(chrome.i18n.getMessage("popup_search_files"));
+    	$('#btn-related-search').html(chrome.i18n.getMessage("popup_related_site"));
+    }
+
+    restore_options();
+
 	$('#query').focus();  
+	
 	$('#query').keyup(function(e)
 	{
 		if (e.keyCode == 13) {
@@ -56,5 +72,21 @@ $(function(){
     		$('#txt_filetype').focus();
     	});
     });
+
+    $('#toogle-search-on_site').click(function () {
+    	ApplyPlaceholder();
+    	
+    });
+
+    function ApplyPlaceholder(){
+    	if($('#toogle-search-on_site').is(':checked'))
+    	{
+    		$('#query').attr("placeholder", chrome.i18n.getMessage("query_placeholder_site"));
+    	}
+    	else
+    	{
+    		$('#query').attr("placeholder", chrome.i18n.getMessage("query_placeholder"));
+    	}
+    }
 
 });

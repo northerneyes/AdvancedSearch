@@ -17,6 +17,30 @@
 	"popup_related_site" : {
 		"message" : "Search related site"
 	},
+	"search_title" :{
+		"message" : "Search"
+	},
+	"settings_search_on_site": {
+		"message" : "Default site search"
+	},
+	"appearance_title" : {
+		"message": "Appearance"
+	},
+	"settings_show_exactly_phrase":{
+		"message" : "Show exactly phrase option"
+	},
+	"settings_show_filesearch" : {
+		"message" : "Show file search option"
+	},
+	"settings_show_related_search" :{
+		"message" : "Show related search button"
+	},
+	"settings_save_label" : {
+		"message" : "Options saved."
+	},
+	"settings_save_button" :{
+		"message" : "Save"
+	},
 	"language" : {
 		"message" : "Language"
 	}

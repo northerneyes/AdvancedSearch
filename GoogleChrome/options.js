@@ -14,6 +14,18 @@ $(function(){
       $('#toogle_show_exactly_phrase').prop('checked', toBool(show_exactly_phrase));
       $('#toogle_show_filesearch').prop('checked', toBool(show_filesearch));
       $('#toogle_show_relatedsearch').prop('checked', toBool(show_relatedsearch));
+
+      //language
+      $('#search_title').html(chrome.i18n.getMessage("search_title"));
+      $('#toogle_search_on_site').next().html(chrome.i18n.getMessage("settings_search_on_site"));
+
+      $('#appearance_title').html(chrome.i18n.getMessage("appearance_title"));
+      $('#toogle_show_exactly_phrase').next().html(chrome.i18n.getMessage("settings_show_exactly_phrase"));
+      $('#toogle_show_filesearch').next().html(chrome.i18n.getMessage("settings_show_filesearch"));
+      $('#toogle_show_relatedsearch').next().html(chrome.i18n.getMessage("settings_show_related_search"));
+
+     // $('#language_title').find('span').html(chrome.i18n.getMessage("language_title"));
+     // $('#save').html(chrome.i18n.getMessage("settings_save_button"));
     }
 
   //Восстанавливаем значения из localStorage
@@ -30,7 +42,7 @@ $(function(){
 
        // Update status to let user know options were saved.
     var status = document.getElementById("status");
-    status.innerHTML = "Options Saved.";
+    status.innerHTML = chrome.i18n.getMessage("settings_save_label");
     setTimeout(function() {
       status.innerHTML = "";
     }, 1750);

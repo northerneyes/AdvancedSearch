@@ -17,6 +17,30 @@
 	"popup_related_site" : {
 		"message" : "Найти похожий сайт"
 	},
+	"search_title" :{
+		"message" : "Поиск"
+	},
+	"settings_search_on_site": {
+		"message" : "Поиск по сайту по умолчанию"
+	},
+	"appearance_title" : {
+		"message": "Вид"
+	},
+	"settings_show_exactly_phrase":{
+		"message" : "Показывать опцию точная фраза"
+	},
+	"settings_show_filesearch" : {
+		"message" : "Показывать файловый поиск"
+	},
+	"settings_show_related_search" : {
+		"message" : "Показывать кнопку нахождения точного сайта"
+	},
+	"settings_save_label" : {
+		"message" : "Настройки сохранены."
+	},
+	"settings_save_button" :{
+		"message" : "Сохранить"
+	},
 	"language" : {
 		"message" : "Язык"
 	}

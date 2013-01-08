@@ -10,17 +10,17 @@
 	<h1 class="icon">AutoSearch Settings</h1>
   	<hr />
   	<div class="settings">
-  		<h3 class="title_section">Search</h3>
+  		<h3 id = "search_title" class="title_section">Search</h3>
 	  	<div class="setting_section">
 	  		<div class="checkbox">
 		        <label>
 		          <input id = "toogle_search_on_site" type="checkbox">
-		          <span>Поиск по сайту по умлочанию</span>
+		          <span>Поиск по сайту по умолчанию</span>
 		        </label>      
 	    	</div>	
 	  	</div>
 
-	  	<h3 class="title_section">Appearance</h3>
+	  	<h3 id = "appearance_title" class="title_section">Appearance</h3>
 	  	<div class="setting_section">
 	  		<div class="checkbox">
 		        <label>
@@ -42,19 +42,20 @@
 	    	</div>	
 	  	</div>
 	  	
-		<h3 class="title_section">Language</h3>
+<!-- 		<h3 id="language_title" class="title_section">Language</h3>
 		<div class="setting_section">
 			 <select name="lang" id="lang">
     			<option value="ru">Русский</option>
    				<option value="en">English</option>
  			 </select>
-		</div>
+		</div> -->
 	  	 
   </div>
 
   <br>
-<div id="status"></div>
+
 <button id="save">Save</button>
+<div id="status"></div>
 
 <script src="jquery/jquery-1.7.1.min.js"></script>
 <script src="utils.js"></script>

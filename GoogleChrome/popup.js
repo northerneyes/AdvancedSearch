@@ -10,6 +10,8 @@ $(function(){
     	$('#exatly_phrase').find('span').html(chrome.i18n.getMessage("popup_exactly_phrase"));
     	$('#file-search').find('span').html(chrome.i18n.getMessage("popup_search_files"));
     	$('#btn-related-search').html(chrome.i18n.getMessage("popup_related_site"));
+
+    	ApplySettings();
     }
 
     restore_options();
@@ -77,6 +79,29 @@ $(function(){
     	ApplyPlaceholder();
     	
     });
+
+    function ApplySettings()
+    {
+    	var search_on_site_default = localStorage["search_on_site_default"] == undefined ? true : localStorage["search_on_site_default"];
+        var show_exactly_phrase = localStorage['show_exactly_phrase'] == undefined ? true : localStorage["show_exactly_phrase"];
+        var show_filesearch =     localStorage['show_filesearch'] == undefined ? true : localStorage["show_filesearch"];
+        var show_relatedsearch =  localStorage['show_relatedsearch'] == undefined ? true : localStorage["show_relatedsearch"];
+
+        console.log(toBool(search_on_site_default));
+        if(toBool(search_on_site_default)) 
+        	$('#toogle-search-on_site').prop('checked', toBool(search_on_site_default));
+
+        if(!toBool(show_exactly_phrase))
+        	$('#exatly_phrase').hide();
+        if(!toBool(show_filesearch))
+        	$('#file-search').hide();
+        if(!toBool(show_relatedsearch))
+        {
+        	$('.splitter').hide();
+        	$('#related-search').hide();
+        }
+
+    }
 
     function ApplyPlaceholder(){
     	if($('#toogle-search-on_site').is(':checked'))

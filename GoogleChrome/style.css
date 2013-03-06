@@ -107,6 +107,7 @@ input[type="radio"] {
 input[type="checkbox"]:hover, input[type="radio"]:hover {
     background-image: -webkit-linear-gradient(90deg, hsla(0,0%,0%,.15),hsla(0,0%,0%,.05));
 }
+
 input[type="radio"]:checked::before {
     background-color: #666;
     background-image: -webkit-linear-gradient(90deg, hsla(0,0%,0%,.1), hsla(0,0%,0%,.25));

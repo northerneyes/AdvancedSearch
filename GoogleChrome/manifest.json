@@ -1,12 +1,12 @@
 {
 	"default_locale":"en",
 	"name": "AutoSearch",
-	"version": "0.1",
+	"version": "1.0.2",
 	"manifest_version": 2,
-	"description": "This is extension that lets can easily use many feature of google search.",
+	"description": "Search on your favorite sites via Google",
 	
 	"browser_action": {
-	    "default_icon": "icons/icon.png",
+	    "default_icon": "icon.png",
 		"default_popup": "popup.html"
 	},
 	"options_page": "options.html",
@@ -14,7 +14,7 @@
 	"permissions": [
     	"tabs"
   	],
-  	"icons": {
-    "128": "icons//icon.png"
-  	}
+  	"icons": { "16": "icon16.png",
+           "48": "icon48.png",
+          "128": "icon128.png" }
 }

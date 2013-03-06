@@ -36,6 +36,7 @@ $(function(){
     localStorage["search_on_site_default"] = $('#toogle_search_on_site').is(':checked');
 
     //Appearance
+
     localStorage['show_exactly_phrase'] = $('#toogle_show_exactly_phrase').is(':checked');
     localStorage['show_filesearch'] = $('#toogle_show_filesearch').is(':checked');
     localStorage['show_relatedsearch'] = $('#toogle_show_relatedsearch').is(':checked');
@@ -49,6 +50,7 @@ $(function(){
   }
 
     restore_options();
+    
   $('#save').click(function(){
       save_options();
     });
